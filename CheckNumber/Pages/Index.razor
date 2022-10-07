@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<h1>Negativo ou Positivo?</h1>
+
+
+<label  >Insira o número:</label>
+<input @bind="numero"  />
+<br />
+
+<p>O resultado é <b>@resultado</b></p>
+
+<div>
+    <button @onclick="CheckNumber" class="btn btn-outline-primary">Clique aqui</button>
+</div>
+@code{
+    int numero;
+    string resultado;
+
+    void CheckNumber()
+    {
+        if(numero < 0)
+        {
+            resultado = "Negativo!";
+        }
+        else
+        {
+            resultado = "Positivo!";
+        }
+    }
+}
